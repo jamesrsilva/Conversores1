@@ -40,9 +40,9 @@ class ViewController: UIViewController {
             btUni1.setTitle("Metro", for: .normal)
             btUnit2.setTitle("Kilômetro", for: .normal)
         default:
-            lbUnit.text = "Peso"
-            btUni1.setTitle("Kilograma", for: .normal)
-            btUnit2.setTitle("Libra", for: .normal)
+            lbUnit.text = "Temperatura"
+            btUni1.setTitle("Celsius", for: .normal)
+            btUnit2.setTitle("Farenheit", for: .normal)
         }
         convert(nil)
     }
@@ -67,6 +67,9 @@ class ViewController: UIViewController {
         default:
             calcDistance()
         }
+        view.endEditing(true)
+        let result = Double(lbResult.text!)
+        lbResult.text = String(format: "%.2f", result!)
     }
     
     func calcTemperature(){
